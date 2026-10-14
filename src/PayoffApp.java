@@ -14,18 +14,25 @@ public class PayoffApp {
 public static void main(String[] args) {
 
 
-CreditCard costco = new CreditCard("Costco Visa", 20.33, 300);
+CreditCard costco = new CreditCard("Costco", 20.33, 300);
 
-CreditCard target = new CreditCard("Cardomana", 80, 10000);
+CreditCard target = new CreditCard("target", 80, 10000);
 
-costco.setName("costco visa");
+costco.setName("costco");
 
+System.out.println(costco);
+System.out.println(costco);
+System.out.println(costco);
+System.out.println(costco.oneMonthBalanceinterestSum());
+System.out.println(costco.oneMonthBalanceinterestSum()+costco.getApr());
 System.out.println(costco);
 
 Scanner scan = new Scanner(System.in);
 
 
+costco.oneMonthBalanceinterestSum();
 
+System.out.println(costco.getName() + " monthly interest: " + costco.monthlyInterest());
 List<Double> aprList = new ArrayList<>();
 
 

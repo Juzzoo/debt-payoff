@@ -36,9 +36,21 @@ public class CreditCard implements Comparable<CreditCard> {
         return balance;
     }
 
+     public double monthlyInterest(){
+            return (apr/100) * balance / 12; // monthly interest rate
+            //monthly interest rate * balance = monthly interest
+
+        }
+
+    public double oneMonthBalanceinterestSum()
+        {
+            return balance + monthlyInterest();
+        }
+        
     public String toString(){
 
         return "Name: " + name + " APR: " + apr + " Balance: " + balance;
+
 
     }
     public int compareTo(CreditCard other){
