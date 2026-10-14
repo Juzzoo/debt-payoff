@@ -1,31 +1,91 @@
 import java.util.ArrayList;
+
+import java.util.Collections;
+
+import java.util.Comparator;
+
+import java.util.List;
+
 import java.util.Scanner;
 
+
 public class PayoffApp {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
-        // Make an empty arrayList to hold aprs
-        
-        ArrayList<Double> aprs = new ArrayList<Double>();
+public static void main(String[] args) {
 
-        while(scan.hasNextLine()) {
-            String name = scan.nextLine();
 
-            double apr = scan.nextDouble();
-            double balance = scan.nextDouble();
+CreditCard costco = new CreditCard("Costco Visa", 20.33, 300);
 
-            // add apr to arrayList
+CreditCard target = new CreditCard("Cardomana", 80, 10000);
 
-            // Consume \n after balance input 
-            if(scan.hasNextLine()) scan.nextLine();
+costco.setName("costco visa");
 
-            String aprString = String.format("%.2f%%", apr);
-            String balanceString = String.format("$%.2f", balance);
-            System.out.println(name + ": " + "APR: " + aprString + " Balance: " + balanceString);
-        }
+System.out.println(costco);
 
-        // sort arrayList
-        // print arrayList
-    }
+Scanner scan = new Scanner(System.in);
+
+
+
+List<Double> aprList = new ArrayList<>();
+
+
+List<CreditCard> cards = new ArrayList<>();
+
+
+
+//double[] nprArray = new double[10000];
+
+
+while(scan.hasNextLine()) {
+
+String name = scan.nextLine();
+
+
+double apr = scan.nextDouble();
+
+double balance = scan.nextDouble();
+
+
+//add apr to arraylist
+
+
+aprList.add(apr);
+
+
+// Consume \n after balance input 
+
+if(scan.hasNextLine()) scan.nextLine();
+
+
+CreditCard card1 = new CreditCard(name, apr, balance);
+
+cards.add(card1);
+
+// String aprString = String.format("%.2f%%", apr);
+
+// String balanceString = String.format("$%.2f", balance);
+
+// System.out.println(name + ": " + "APR: " + aprString + " Balance: " + balanceString);
+
+
+}
+
+//sort
+
+//print all out
+
+Collections.sort(aprList, Comparator.reverseOrder());
+
+System.out.println(aprList);
+
+
+Collections.sort(cards, Comparator.reverseOrder());
+
+System.out.println(cards);
+
+
+scan.close();
+
+}
+
 }
